@@ -4,11 +4,10 @@
 en:
   no_state_changes: No state changes yet.
   state_changes: State changes
-    state_change:
-      type: Type
-      state_from: State from
-      state_to: State to
-      user: User
-      timestamp: Timestamp
-      updated: Updated
-
+  state_change:
+    type: Type
+    state_from: State from
+    state_to: State to
+    user: User
+    timestamp: Timestamp
+    updated: Updated
