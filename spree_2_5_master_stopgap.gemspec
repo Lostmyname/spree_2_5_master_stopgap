@@ -2,21 +2,20 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_2_5_master_stopgap'
-  s.version     = '2.3.5.beta'
-  s.summary     = 'TODO: Add gem summary here'
-  s.description = 'TODO: Add (optional) gem description here'
+  s.version     = '2.2.1'
+  s.summary     = 'Pulling in some of the Spree master features into a gem we can drop at a later date'
   s.required_ruby_version = '>= 1.9.3'
 
-  # s.author    = 'You'
-  # s.email     = 'you@example.com'
-  # s.homepage  = 'http://www.spreecommerce.com'
+  s.author    = 'Lostmy.name'
+  s.email     = 'dev@lostmy.name'
+  s.homepage  = 'http://www.lostmy.name'
 
   #s.files       = `git ls-files`.split("\n")
   #s.test_files  = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'spree_core', '~> 2.3.5.beta'
+  s.add_dependency 'spree_core', '~> 2.3.1'
 
   s.add_development_dependency 'capybara', '~> 2.4'
   s.add_development_dependency 'coffee-rails'

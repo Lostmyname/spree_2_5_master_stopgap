@@ -2,4 +2,13 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  no_state_changes: No state changes yet.
+  state_changes: State changes
+    state_change:
+      type: Type
+      state_from: State from
+      state_to: State to
+      user: User
+      timestamp: Timestamp
+      updated: Updated
+
