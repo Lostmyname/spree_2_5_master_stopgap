@@ -13,8 +13,9 @@
        <col style="width: 20%;">
        <col style="width: 10%;">
        <col style="width: 10%;">
-       <col style="width: 30%;">
-       <col style="width: 30%;">
+       <col style="width: 20%;">
+       <col style="width: 20%;">
+       <col style="width: 20%;">
     </colgroup>
 
     <thead>
@@ -22,8 +23,9 @@
         <th><%= Spree.t("state_change.type") %></th>
         <th><%= Spree.t("state_change.state_from") %></th>
         <th><%= Spree.t("state_change.state_to") %></th>
+        <th><%= Spree.t("state_change.time_since_last_state") %></th>
         <th><%= Spree.t("state_change.user") %></th>
-        <th><%= Spree.t("state_change.timestamp") %></th>
+        <th><%= Spree.t("state_change.when") %></th>
       </tr>
     </thead>
 
@@ -34,10 +36,17 @@
           <td class="align-center"><%= item.previous_state.try(:titleize) %></td>
           <td class="align-center"><%= item.next_state.titleize %></td>
           <td class="align-center">
+            <% if index > 0 %>
+              <%= distance_of_time_in_words(@items[index-1].created_at, item.created_at) %>
+            <% end %>
+          </td>
+          <td class="align-center">
             <%= link_to item.user.login, admin_user_path(item.user) if item.user.present? %>
           </td>
           <td class="align-center">
-            <%= l(item.created_at).to_time %>
+            <abbr title="<%= l(item.created_at).to_time %>">
+              <%= time_ago_in_words(item.created_at, include_seconds: true) %> ago
+            </abbr>
             <% if item.created_at != item.updated_at %>
               <small><%= Spree.t("state_change.updated") %>: <%= l(item.updated_at).to_time %></small>
             <% end %>
